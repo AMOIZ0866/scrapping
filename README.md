@@ -1,7 +1,7 @@
 ## Scrapping in Python by using BeautifulSoup
 
 ## Objective of Project
-- In this project, we are doing scrapping while using beautifulsoup library of python.
+- In this project, we are doing scrapping while using beautifulsoup library of python. We have get validated data from           https://www.goodreads.com/book/popular_by_date
 
 
 ## Setup Project
@@ -19,7 +19,8 @@ git clone https://github.com/AMOIZ0866/scrapping.git
     -  pip3 install bs4 
           
     
-
+## Procedure
+ - After Run the program, this will create json file with name of 'filename'
 
 ## Git Branching Structure
 - Default latest branch is **Staging**
