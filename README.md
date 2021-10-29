@@ -14,8 +14,8 @@ git clone https://github.com/AMOIZ0866/scrapping.git
 2. Make sure you have python 3 installed in your system
 
 3. Make sure you have install these packages of python 
-    -
-    -
+    
+    
 
 
 ## Git Branching Structure
