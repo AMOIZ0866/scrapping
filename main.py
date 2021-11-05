@@ -1,31 +1,16 @@
-from analysis import get_high_rating, get_author_with_most_books, get_genres_with_number_of_books, get_avg_rating_genres
-from scraper import scrapping
+from analysis import Analysis as ans
 
-
-# This is a sample Python script.
-
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-from scrapping import fetching_links_scrap, getting_details
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    # Getting Data #
+
+    """Function to get the details of books and save them in to json file"""
     # fetching_links_scrap()
 
+    """ Analysis class contain function used for analyzing data in the json file. Each Function perfrom different type of  """
+    """analysis by using panda dataframe"""
     # Analysis of data#
-    get_high_rating()
-    # get_author_with_most_books()
-    # get_genres_with_number_of_books()
-    # get_avg_rating_genres()
+    analysis=ans()
+    analysis.get_high_rating()
+    # analysis.get_author_with_most_books()
+    # analysis.get_genres_with_number_of_books()
+    # analysis.get_avg_rating_genres()
 
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/

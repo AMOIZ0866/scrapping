@@ -1,12 +1,7 @@
 import json
 import os
 import time
-from datetime import datetime
-from typing import re
-
-from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -15,9 +10,14 @@ from bs4 import BeautifulSoup
 from selenium.common.exceptions import TimeoutException
 import datefinder
 
+"""
+In the function were using Selenium to get the book urls link list
+"""
+
 
 def fetching_links_scrap():
     url = "https://www.goodreads.com/book/popular_by_date"
+    # config the options
     options = Options()
     options.headless = False
     options.add_argument("--window-size=1920,1200")
@@ -26,6 +26,8 @@ def fetching_links_scrap():
     DRIVER_BIN = os.path.join(PROJECT_ROOT, "chromedriver")
     driver = webdriver.Chrome(executable_path=DRIVER_BIN, chrome_options=options)
     driver.get(url)
+
+    # Loop to get the books url list
     for x in range(15):
         try:
             WebDriverWait(driver, 10).until(
@@ -41,7 +43,13 @@ def fetching_links_scrap():
     getting_details(links)
 
 
+"""
+This function is used to get the details of each book by using beautiful Soup and Selenium
+"""
+
+
 def getting_details(links):
+    # config the options
     bookdetails = []
 
     for d in links:
@@ -91,7 +99,6 @@ def getting_details(links):
         except:
             books['author'] = "NO AUTHOR"
 
-
         try:
             books['rating_score'] = soup.find("span", itemprop='ratingValue').text.strip()
         except:
@@ -121,10 +128,7 @@ def getting_details(links):
 
         bookdetails.append(books)
         soup.clear()
-        print(bookdetails)
 
-
-    print(bookdetails)
     output_file = open('Data.json', 'w', encoding='utf-8', )
     json_object = json.dumps(bookdetails, indent=4)
     output_file.write(json_object)
