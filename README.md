@@ -1,7 +1,7 @@
 ## Scrapping in Python by using BeautifulSoup
 
 ## Objective of Project
-- In this project, we are doing scrapping while using beautifulsoup library of python.
+- In this project, we are doing scrapping while using beautifulsoup library of python. We have get validated data from           https://www.goodreads.com/book/popular_by_date
 
 
 ## Setup Project
@@ -17,9 +17,22 @@ git clone https://github.com/AMOIZ0866/scrapping.git
     -  pip3 install requests 
     -  pip3 install html5lib
     -  pip3 install bs4 
+    -  pip3 install selenium 
+    -  brew cask install chromedriver
           
     
-
+## Procedure
+   In the main we have to parts:
+   - Getting Data
+   - Analysis of data
+   
+ - In the Getting data there is function with name 'fetching_links_scrap()' this function will be used to fetch book data and write them in a json file(data.json)
+   
+   In the second part we have four functions of analysis of the data:
+   - "get_high_rating()" for making a small graph showing the top 10 highest rated books.
+   - "get_author_with_most_books()" for list of authors who had the most number of books in the popular book
+   - "get_genres_with_number_of_books()" for list all the genres in order of number of books.
+   - "get_avg_rating_genres()" for calculating the average rating of books in a genre.
 
 ## Git Branching Structure
 - Default latest branch is **Staging**
