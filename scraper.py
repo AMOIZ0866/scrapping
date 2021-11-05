@@ -5,7 +5,11 @@ import requests
 from bs4 import BeautifulSoup
 
 
+
+
+
 def scrapping():
+
     URL = "https://www.goodreads.com/book/popular_by_date"
     r = requests.get(URL)
     soup = BeautifulSoup(r.content,
@@ -33,7 +37,7 @@ def scrapping():
         # rating
         rating = d.find('span', attrs={"class", "Text Text__body3 Text__semibold Text__body-standard"})
         ratings["ratings_score"] = rating.text
-
+        # 59511272
         # total rating value
         trating = d.find("div", attrs={"class", "AverageRating"})
         x = str(trating.text).split()
